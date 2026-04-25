@@ -1,14 +1,35 @@
 🌐 [Português (BR)](README.pt_BR.md) | [Español](README.es.md)
 
-# Soc Ops
+# 🎯 Soc Ops — Social Bingo
 
-Social Bingo game for in-person mixers. Find people who match the questions and get 5 in a row!
+> **Break the ice, make connections, win at networking!**
 
-🎮 **[Play the Game](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/)** • 📚 **[View Lab Guide](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/)**
+Soc Ops is an interactive social bingo game designed for in-person mixers, team events, and conferences. Find people who match the prompts, mark your card, and race to get 5 in a row!
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2c6d0c33-72ec-47e8-b6bc-20837e7d830b" alt="Start Screen" width="300" />
+  <img src="https://github.com/user-attachments/assets/4785afd4-c22a-4b1c-9b78-64d426c599e9" alt="Game Board" width="300" />
+</p>
+
+<p align="center">
+  🎮 <strong><a href="https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/">Play the Game</a></strong> &nbsp;•&nbsp; 📚 <strong><a href="https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/">View Lab Guide</a></strong>
+</p>
+
+---
+
+## ✨ Features
+
+- 🎲 **Randomized boards** — Every player gets a unique arrangement
+- 💾 **Auto-save progress** — Pick up where you left off
+- 🏆 **Bingo detection** — Automatic win detection for rows, columns, and diagonals
+- 🎉 **Celebration modal** — Confetti-worthy victory screen
+- 📱 **Mobile-first** — Works great on phones at events
 
 ---
 
 ## 📚 Lab Guide
+
+This repo is the starting point for a hands-on workshop building with GitHub Copilot agents in VS Code.
 
 | Part | Title |
 |------|-------|
@@ -22,11 +43,25 @@ Social Bingo game for in-person mixers. Find people who match the questions and 
 
 ---
 
-## Prerequisites
+## 🚀 Quick Start
 
+### Prerequisites
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or higher
 
-## Open in GitHub Codespaces (optional)
+### Run Locally
+```bash
+cd SocOps
+dotnet run
+# Open http://localhost:5166
+```
+
+### Build
+```bash
+cd SocOps
+dotnet build
+```
+
+### Open in GitHub Codespaces
 
 After creating your own repo from this template:
 
@@ -39,18 +74,47 @@ After creating your own repo from this template:
    dotnet run
    ```
 
-## Run
+---
 
-```bash
-cd SocOps
-dotnet run
+## 🎨 Customize Your Game
+
+### Change Questions
+Edit `SocOps/Data/Questions.cs` to add your own icebreaker prompts:
+```csharp
+public static readonly List<string> QuestionsList = new()
+{
+    "has a pet",
+    "speaks more than 2 languages",
+    "your custom question here",
+    // ... 24+ questions for a full board
+};
 ```
 
-## Build
+---
 
-```bash
-cd SocOps
-dotnet build
+## 🛠️ Tech Stack
+
+- **Framework**: Blazor WebAssembly (.NET 10)
+- **Styling**: Custom CSS utilities (Tailwind-inspired)
+- **State**: Scoped services with localStorage persistence
+- **Deployment**: GitHub Pages via Actions
+
+## 📁 Project Structure
+
+```
+SocOps/
+├── Components/     # BingoBoard, BingoSquare, Modals
+├── Models/         # Game state & data models
+├── Services/       # Game logic & state management
+├── Data/           # Question bank
+└── wwwroot/        # Static assets
 ```
 
-Deploys automatically to GitHub Pages on push to `main`.
+## 🚢 Deployment
+
+Automatically deploys to GitHub Pages on push to `main`:
+- Your game: `https://{username}.github.io/{repo-name}`
+
+## 📝 License
+
+MIT — use it for your next event!
